@@ -6,8 +6,9 @@ const schema = yup.object().shape({
 });
 
 export const SearchBar = () => {
-  const handleSubmit = ({ formData }, { resetForm }) => {
-    resetForm();
+  const handleSubmit = (values, actions) => {
+    console.log('VALUES', values.searchInput);
+    actions.resetForm();
   };
 
   return (
@@ -16,14 +17,16 @@ export const SearchBar = () => {
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <ErrorMessage name="searchInput" />
         <Field
           type="text"
           name="searchInput"
           placeholder="Search images and photos"
+          autoComplete="off"
+          required
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Find</button>
       </Form>
     </Formik>
   );
