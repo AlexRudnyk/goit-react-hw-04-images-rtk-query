@@ -6,9 +6,9 @@ const schema = yup.object().shape({
 });
 
 export const SearchBar = () => {
-  const handleSubmit = (values, actions) => {
-    console.log('VALUES', values.searchInput);
-    actions.resetForm();
+  const handleSubmit = ({ searchInput }, { resetForm }) => {
+    console.log('VALUES', searchInput);
+    resetForm();
   };
 
   return (
