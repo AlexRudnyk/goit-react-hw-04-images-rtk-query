@@ -5,9 +5,10 @@ const schema = yup.object().shape({
   searchInput: yup.string().min(2, 'Too short').max(50, 'Too long'),
 });
 
-export const SearchBar = () => {
+export const SearchBar = ({ onSubmit }) => {
   const handleSubmit = ({ searchInput }, { resetForm }) => {
-    console.log('VALUES', searchInput);
+    if (searchInput === '') return;
+    onSubmit(searchInput);
     resetForm();
   };
 
