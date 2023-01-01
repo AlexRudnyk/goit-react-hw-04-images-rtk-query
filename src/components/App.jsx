@@ -9,9 +9,9 @@ export const App = () => {
     setSearchQuery(query);
   };
   return (
-    <div>
+    <>
       <SearchBar onSubmit={handleSubmit} />
       <ImgGallery query={searchQuery} />
-    </div>
+    </>
   );
 };

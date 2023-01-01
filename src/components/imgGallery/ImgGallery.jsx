@@ -7,6 +7,7 @@ import { Spinner } from 'components/spinner';
 
 export const ImgGallery = ({ query }) => {
   const { data: images, error, isLoading } = useFetchImgsBySearchQuery(query);
+
   return (
     <>
       {error && toast.error('Something went wrong...')}
