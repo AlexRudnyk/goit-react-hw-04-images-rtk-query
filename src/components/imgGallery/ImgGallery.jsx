@@ -5,8 +5,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { List } from './ImgGallery.styled';
 import { Spinner } from 'components/spinner';
 
-export const ImgGallery = ({ query }) => {
-  const { data: images, error, isLoading } = useFetchImgsBySearchQuery(query);
+export const ImgGallery = ({ query, page }) => {
+  const {
+    data: images,
+    error,
+    isLoading,
+  } = useFetchImgsBySearchQuery({ query, page });
 
   return (
     <>
