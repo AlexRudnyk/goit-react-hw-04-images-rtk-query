@@ -1,6 +1,7 @@
 import { SearchBar } from './searchBar';
 import { ImgGallery } from './imgGallery';
 import { useState } from 'react';
+import { Container, MoreBtn } from './App.styled';
 
 export const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,9 +20,11 @@ export const App = () => {
     <>
       <SearchBar onSubmit={handleSubmit} />
       <ImgGallery query={searchQuery} page={searchPage} />
-      <button type="button" onClick={handleLoadMoreClick}>
-        Load more
-      </button>
+      <Container>
+        <MoreBtn type="button" onClick={handleLoadMoreClick}>
+          Load more
+        </MoreBtn>
+      </Container>
     </>
   );
 };
