@@ -1,17 +1,10 @@
 import { ImgItem } from 'components/imgItem';
-import { useFetchImgsBySearchQuery } from 'redux/imgSlice';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { List } from './ImgGallery.styled';
 import { Spinner } from 'components/spinner';
 
-export const ImgGallery = ({ query, page }) => {
-  const {
-    data: images,
-    error,
-    isLoading,
-  } = useFetchImgsBySearchQuery({ query, page });
-
+export const ImgGallery = ({ images, error, isLoading }) => {
   return (
     <>
       {error && toast.error('Something went wrong...')}

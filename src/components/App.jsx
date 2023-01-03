@@ -2,10 +2,17 @@ import { SearchBar } from './searchBar';
 import { ImgGallery } from './imgGallery';
 import { useState } from 'react';
 import { Container, MoreBtn } from './App.styled';
+import { useFetchImgsBySearchQuery } from 'redux/imgSlice';
 
 export const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchPage, setSearchPage] = useState(1);
+
+  const {
+    data: images,
+    error,
+    isLoading,
+  } = useFetchImgsBySearchQuery({ searchQuery, searchPage });
 
   const handleSubmit = query => {
     setSearchQuery(query);
@@ -19,7 +26,7 @@ export const App = () => {
   return (
     <>
       <SearchBar onSubmit={handleSubmit} />
-      <ImgGallery query={searchQuery} page={searchPage} />
+      <ImgGallery images={images} error={error} isLoading={isLoading} />
       <Container>
         <MoreBtn type="button" onClick={handleLoadMoreClick}>
           Load more

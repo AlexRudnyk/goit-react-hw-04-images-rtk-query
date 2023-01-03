@@ -11,7 +11,8 @@ export const imgApi = createApi({
   tagTypes: ['Img'],
   endpoints: builder => ({
     fetchImgsBySearch: builder.query({
-      query: ({ query, page }) => `&q=${query}&page=${page}`,
+      query: ({ searchQuery, searchPage }) =>
+        `&q=${searchQuery}&page=${searchPage}`,
       providesTags: ['Img'],
     }),
   }),
