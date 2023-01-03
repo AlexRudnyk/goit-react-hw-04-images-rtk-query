@@ -14,6 +14,8 @@ export const App = () => {
     isLoading,
   } = useFetchImgsBySearchQuery({ searchQuery, searchPage });
 
+  const totalPages = Math.ceil(images?.total / 20);
+
   const handleSubmit = query => {
     setSearchQuery(query);
     setSearchPage(1);
@@ -27,11 +29,13 @@ export const App = () => {
     <>
       <SearchBar onSubmit={handleSubmit} />
       <ImgGallery images={images} error={error} isLoading={isLoading} />
-      <Container>
-        <MoreBtn type="button" onClick={handleLoadMoreClick}>
-          Load more
-        </MoreBtn>
-      </Container>
+      {searchPage < totalPages && (
+        <Container>
+          <MoreBtn type="button" onClick={handleLoadMoreClick}>
+            Load more
+          </MoreBtn>
+        </Container>
+      )}
     </>
   );
 };
