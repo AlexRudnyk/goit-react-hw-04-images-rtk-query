@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/GitHub/goit-react-hw-04-images-rtk-query/static/css/main.46c86a0d.css",
-    "main.js": "/GitHub/goit-react-hw-04-images-rtk-query/static/js/main.da2314d2.js",
+    "main.js": "/GitHub/goit-react-hw-04-images-rtk-query/static/js/main.aa82c192.js",
     "index.html": "/GitHub/goit-react-hw-04-images-rtk-query/index.html",
     "main.46c86a0d.css.map": "/GitHub/goit-react-hw-04-images-rtk-query/static/css/main.46c86a0d.css.map",
-    "main.da2314d2.js.map": "/GitHub/goit-react-hw-04-images-rtk-query/static/js/main.da2314d2.js.map"
+    "main.aa82c192.js.map": "/GitHub/goit-react-hw-04-images-rtk-query/static/js/main.aa82c192.js.map"
   },
   "entrypoints": [
     "static/css/main.46c86a0d.css",
-    "static/js/main.da2314d2.js"
+    "static/js/main.aa82c192.js"
   ]
 }
