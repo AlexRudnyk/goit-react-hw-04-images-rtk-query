@@ -25,8 +25,6 @@ export const App = () => {
     setSearchPage(state => state + 1);
   };
 
-  console.log('QUERY: ', searchQuery);
-
   return (
     <>
       <SearchBar onSubmit={handleSubmit} />
